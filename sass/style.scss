@@ -1,95 +1,78 @@
-//變數區域
-// 可以放:值、色碼
-// $fontSize: 20px;
-// $color: #333;
-// $fontc: rgb(190, 0, 0);
-// $fontFamily: 'Zhi Mang Xing', cursive;
-@import './base/var';
-@import './layout/header';
-@import './layout/footer';
-
+@import "./base/var";
+@import "./mixin/btn";
+@import "./mixin/rect";
+@import "./mixin/floatM";
+@import "./mixin/fontSize";
+@import "./mixin/jumpSymbol";
+@import "./mixin/prefix";
+@import "./mixin/mathSymbol";
+@import "./mixin/ifElse";
+@import "./mixin/for";
+@import "./mixin/puesdo&";
+@import "./layout/header";
+@import "./layout/footer";
 
 // @mixin = js的function，用@include可以去呼叫他
 // @mixin 變數名稱(){ }/ @include 變數名稱();
 @mixin margin1() {
-    margin: 50px;
+  margin: 50px;
 }
 
-// @mixin rect() {
-//     width: 600px;
-//     height: 100px;
-//     padding: 50px;
-//     background: mediumspringgreen;
-//     // transform: rotate(45deg);
-// }
-
-// mixin裡面的變數是區域變數，若其他mixin設相同名稱不會互相影響
-@mixin rect( $W, $H, $C) {
-    width: $W;
-    height: $H;
-    padding: 50px;
-    background: $C;
-    // transform: rotate(45deg);
+body {
+  background: lightpink;
+  // padding: 100px;
+  margin: 0px;
+  // font-size: $fontSize;
+  @include titleSize(14);
 }
 
-@mixin float_M($dir, $W:500px) {
-    float: $dir;
-    width: $W;
-    height: $W*2; //會跟著變數$W改變
+h1 {
+  color: $color;
+  font-size: $fontSize * 3;
 }
 
-body{
-    background: lightpink;
-    // padding: 100px;
-    margin: 0px;
-    font-size: $fontSize;
+p {
+  color: $fontc;
+  padding: 0;
+  font-size: $fontSize * 0.8;
 }
 
-h1{
-    color: $color;
-    font-size: $fontSize * 3;
-}
-
-p{
-    color: $fontc;
-    padding: 0;
-    font-size: $fontSize * 0.8;
-}
-
-.mm{
-    font-family: $fontFamily;
-    font-size: $fontSize * 2;
+.mm {
+  font-family: $fontFamily;
+  font-size: $fontSize * 2;
 }
 
 // 巢狀寫法
-#content{
-    margin: 50px;
-    width: 300px;
-    height: 200px;
-    background: black;
+#content {
+  margin: 50px;
+  width: 300px;
+  height: 200px;
+  background: black;
 
-    h2{
-        color: blanchedalmond;
-        margin: 20px;
+  h2 {
+    color: blanchedalmond;
+    margin: 20px;
 
-        span{
-            background: burlywood;
-            color:$fontc;
-            @include margin1();
-        }
+    span {
+      background: burlywood;
+      color: $fontc;
+      @include margin1(); //在這裡呼叫 @mixin margin1()
     }
+  }
 
-    p{
-        font-size: $fontSize*0.7;
-        padding: 50px;
-    }
+  p {
+    font-size: $fontSize * 0.7;
+    padding: 50px;
+  }
 }
 
-.rect{
-    @include rect(600px, 100px, rgba(190, 0, 0, 1));
+.rect {
+  @include rect(600px, 100px, rgba(190, 0, 0, 1));
 }
 
-.float_M{
-    @include float_M(left, 200px);
-    background: mediumseagreen;
+.float_M {
+  @include float_M(left, 50px);
+  background: mediumseagreen;
 }
+
+

@@ -1,0 +1,12 @@
+//瀏覽器用mixin
+@mixin prefix($attr, $value) {
+    -moz-#{$attr}: $value;
+    -o-#{$attr}: $value;
+    -webkit-#{$attr}: $value;
+    #{$attr}: $value;
+  }
+  
+  .boxs {
+    @include prefix(transition, all 0.5s);
+    @include bg_image(pic_02);
+  }

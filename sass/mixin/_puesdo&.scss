@@ -1,0 +1,15 @@
+//偽元素的使用 "&"
+.link {
+    color: mediumspringgreen;
+    margin: 20px;
+    &:hover {
+      color: mediumaquamarine;
+    }
+    &::before {
+      content: "[before]";
+    }
+    &::after {
+      content: "[after]";
+    }
+  }
+  

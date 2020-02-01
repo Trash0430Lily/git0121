@@ -1,0 +1,18 @@
+
+@mixin titleSize($fontSize1) {
+    h1{
+        font-size: $fontSize1 * 4;
+    }
+    h2{
+        font-size: $fontSize1 * 3;
+    }
+    h3{
+        font-size: $fontSize1 * 2;
+    }
+    h4{
+        font-size: $fontSize1 * 1.5;
+    }
+    h5{
+        font-size: $fontSize1 * 1;
+    }
+}

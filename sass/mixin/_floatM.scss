@@ -1,0 +1,5 @@
+@mixin float_M($dir, $W:500px) {
+    float: $dir;
+    width: $W;
+    height: $W*2; //會跟著變數$W改變
+}

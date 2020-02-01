@@ -1,0 +1,81 @@
+//@if{} @else{}
+//方法一
+// $marginTop :30px;
+// .box_area{
+//     @if $marginTop <= 20px{
+//         margin-top: $marginTop;
+//     }
+//     @else{
+//         margin-top: ($marginTop/2);
+//     }
+// }
+
+//方法二:包在 @mixin 裡面
+@mixin boxArea($marginTop) {
+    .box_area {
+      @if $marginTop <= 20px {
+        margin-top: $marginTop;
+      } @else {
+        margin-top: ($marginTop/2);
+      }
+    }
+  }
+  @include boxArea(20px);
+  
+  //寫條件式變數值改變時更換 theme color
+  //方法一
+  // @mixin theme($theme) {
+  //   @if $theme ==green {
+  //     body {
+  //       background-color: green;
+  //     }
+  //   } @else if $theme ==blue {
+  //     body {
+  //       background-color: blue;
+  //     }
+  //   } @else if $theme ==yellow {
+  //     body {
+  //       background-color: yellow;
+  //     }
+  //   } @else if $theme ==red {
+  //     body {
+  //       background-color: red;
+  //     }
+  //   } @else {
+  //     body {
+  //       background-color: #fff;
+  //     }
+  //   }
+  // }
+  // @include theme(null);
+  
+  
+  //方法二:@content 的使用
+  //擴增屬性
+  @mixin theme($theme) {
+    @if $theme==green {
+      body {
+        background-color: green;
+        @content;
+      }
+    } @else if $theme==yellow {
+      body {
+        background-color: yellow;
+        @content;
+      }
+    } @else if $theme==blue {
+      body {
+        background-color: blue;
+        @content;
+      }
+    } @else {
+      body {
+        background-color: #fff;
+        @content;
+      }
+    }
+  }
+  
+  @include theme(yellow) {
+    color: #fff;
+  }

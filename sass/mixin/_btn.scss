@@ -1,0 +1,47 @@
+//按鈕的組件
+@import './textAlign';
+
+@mixin btn($width, $padding, $margin, $bgC, $fontC, $border-R, $font-s:15px){
+    width: $width;
+    padding: $padding;
+    margin: $margin;
+    // text-align: center;
+    @include textAlign(center); //funtion裡面包function的用法
+    background: $bgC;
+    font-size: $font-s;
+    cursor: pointer;
+    color:  $fontC;
+    border-radius: $border-R;
+    &:hover{ //偽類的寫法
+        background: darken($bgC, 10);
+    }
+}
+
+
+
+.btn{
+    @include btn(100px, 4px, 10px, pink, maroon, 10px);
+    display: inline-block;
+    border: 2px solid deeppink;
+}
+
+.btn_width{
+    @include btn(180px, 4px, 10px, maroon, #ffffff, 10px);
+    display: inline-block;
+}
+
+.btn_small{
+    @include btn(50px, 4px, 10px, maroon, #ffffff, 10px);
+    display: inline-block;
+}
+
+//將文字至中引用到box-center的function
+@mixin box-center($align) {
+    margin: 0 auto;
+    @include textAlign($align);
+}
+.box-center { //再應用
+    @include box-center(center);
+}
+
+

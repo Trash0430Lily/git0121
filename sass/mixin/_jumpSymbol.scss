@@ -1,0 +1,33 @@
+//方法一
+// @mixin btn_class() {
+//     .btn_class{
+//         width: 200px;
+//         height: 30px;
+//         background-color: #333;
+//         color: #ffffff;
+//     }
+// }
+// @include btn_class();
+
+//方法二
+//使用跳脫符號 #{}
+//常使用在class or 圖片路徑上
+@mixin btn_class($class, $width) {
+    .#{$class} {
+      //.(class)的"."可寫在跳脫符號內或寫在跳脫符號外(也可用#(id))
+      width: $width;
+      height: 30px;
+      background-color: #333;
+      color: #ffffff;
+    }
+  }
+  @include btn_class(btnclass, 150px);
+  
+  //圖片上使用跳脫符號，帶檔案名稱進去
+  @mixin bg_image($url_files) {
+    background-image: url("./images/#{$url_files}.jpg");
+  }
+  
+  .bgimages {
+    @include bg_image(pic_02); //呼叫的時候帶檔案名稱進去
+  }

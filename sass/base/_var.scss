@@ -1,6 +1,13 @@
 // 使用 "_"讓scss不會自動compiler
 // 寫變數時可以使用
 
+//變數區域
+// 可以放:值、色碼
+// $fontSize: 20px;
+// $color: #333;
+// $fontc: rgb(190, 0, 0);
+// $fontFamily: 'Zhi Mang Xing', cursive;
+
 $fontSize: 20px;
 $color: #333;
 $fontc: rgb(190, 140, 0);

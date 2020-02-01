@@ -1,0 +1,16 @@
+// @mixin rect() {
+//     width: 600px;
+//     height: 100px;
+//     padding: 50px;
+//     background: mediumspringgreen;
+//     // transform: rotate(45deg);
+// }
+
+// mixin裡面的變數是區域變數，若其他mixin設相同名稱不會互相影響
+@mixin rect( $W, $H, $C) {
+    width: $W;
+    height: $H;
+    padding: 50px;
+    background: $C;
+    // transform: rotate(45deg);
+}

@@ -1,0 +1,55 @@
+//@for迴圈
+//class for-1,for-2,for-3.....
+// @for $i from 1 through 10{
+//     .for-#{$i}{
+//         font-size: $i*1px;
+//     }
+// }
+
+//結合Grid
+// @for $i from 1 through 12 {
+//   .col-md-#{$i} {
+//     width: ($i / 12) * 100%;
+//   }
+// }
+
+//利用for迴圈寫grid + mixin
+@mixin grid($num) {
+    @for $i from 1 through $num {
+      .col-md-#{$i} {
+        width: ($i / $num) * 100%;
+      }
+    }
+  }
+  @include grid(12);
+  
+
+  //@each迴圈
+  // @each $var in b, a2, a3{
+  //     .img_#{$var} {
+  //         background-image: url('img/#{$var}.jpg');
+  //         width: 100px;
+  //         height: 30px;
+  //     }
+  // }
+  
+  //@each迴圈加上條件式 + mixin
+  @mixin img_bg($file, $list) {
+      @if $file == jpg{
+          @each $var in $list {
+              .img_#{$var}{
+                  background-image: url('images/#{$var}.jpg');
+              }
+          }
+      }
+      @else if $file == png{
+          @each $var in $list {
+              .img_#{$var}{
+                  background-image: url('images/#{$var}.png');
+              }
+          }
+      }
+  }
+  
+  @include img_bg(png, a1 a2 a3 a4 box);
+  @include img_bg(jpg, b1 b2 b3 b4 jpgbox);
