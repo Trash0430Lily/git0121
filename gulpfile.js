@@ -1,3 +1,4 @@
+//這是一個前端工具
 var gulp = require('gulp');
 var cleanCSS = require('gulp-clean-css');
 var sass = require('gulp-sass');
@@ -26,6 +27,7 @@ gulp.task('sass' , function() {
 //跟watch sass功能很像
 //退出監看功能[ctrl+c]，mac系統的話[ctrl+z]
 gulp.task('watch', function(){
-    gulp.watch('sass/*.scss', ['sass']);
+    gulp.watch('sass/*.scss', ['sass']);//監看淺層scss
+    gulp.watch('sass/*.scss', ['sass/**/*.scss']);//監看深層scss(後面一個資料夾)
     gulp.watch('js/*.js', ['concat']);
 })
