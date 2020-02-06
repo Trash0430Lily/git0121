@@ -325,4 +325,45 @@ p {
     width: 1200px;
   }
 }
+
+h2 {
+  font-size: 30px;
+  width: 10px;
+}
+
+.items-num1 {
+  width: 10px;
+}
+
+.items-num2 {
+  width: 20px;
+}
+
+.items-num3 {
+  width: 30px;
+}
+
+.items-num4 {
+  width: 40px;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+h3 {
+  font-size: 26px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+h5 {
+  font-size: 14px;
+}
 /*# sourceMappingURL=style.css.map */

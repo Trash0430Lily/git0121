@@ -101,13 +101,54 @@ p {
 
 
 //map
+//使用map可以一次塞多值進變數
+//在呼叫使用的時候也可以呼叫多格變數使用
 $a-map:(
   key1: 10px,
   key2: 20px,
-  key2: 30px
+  key3: 30px
 );
+
+$b-map:(
+  key4: 40px,
+);
+
+$c-map:(map-merge($a-map, $b-map));
 
 h2{
   font-size:map-get($a-map, key3);
   width: map-get($a-map, key1);
+  height: map-get($c-map, key5);
 }
+
+
+// map+@each 用法
+$vars:(
+  num1:10px,
+  num2:20px,
+  num3:30px,
+  num4:40px,
+);
+
+@each $name, $num in $vars {
+  .items-#{$name} {
+    width: $num;
+  }
+}
+
+
+//map+@each 用法:標題尺寸規範
+$titleSize:(
+  h1:48px,
+  h2:36px,
+  h3:26px,
+  h4:18px,
+  h5:14px,
+);
+
+@each $title, $value in $titleSize {
+  #{$title}{
+    font-size: $value;
+  }
+}
+
