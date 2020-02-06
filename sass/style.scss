@@ -1,4 +1,7 @@
+//變數
 @import "./base/var";
+
+//函式
 @import "./mixin/btn";
 @import "./mixin/rect";
 @import "./mixin/floatM";
@@ -9,8 +12,21 @@
 @import "./mixin/ifElse";
 @import "./mixin/for";
 @import "./mixin/puesdo&";
+@import "./mixin/while";
+@import "./mixin/rwd";
+
+//組件
+//@include 函式裡的東西
+//例如:btn組件
+
+//layout
 @import "./layout/header";
 @import "./layout/footer";
+
+//其他外掛、bootstrap
+
+
+//-------------------------------------
 
 // @mixin = js的function，用@include可以去呼叫他
 // @mixin 變數名稱(){ }/ @include 變數名稱();
@@ -76,3 +92,22 @@ p {
 }
 
 
+//呼叫rwd @media(使用)
+@include rwd(desktop){
+  .wrapper{
+    width: 1200px;
+  }
+}
+
+
+//map
+$a-map:(
+  key1: 10px,
+  key2: 20px,
+  key2: 30px
+);
+
+h2{
+  font-size:map-get($a-map, key3);
+  width: map-get($a-map, key1);
+}

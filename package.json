@@ -1,7 +1,6 @@
 {
   "name": "git0121",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,5 +14,9 @@
   "bugs": {
     "url": "https://github.com/Trash0430Lily/git0121/issues"
   },
-  "homepage": "https://github.com/Trash0430Lily/git0121#readme"
+  "homepage": "https://github.com/Trash0430Lily/git0121#readme",
+  "description": "",
+  "dependencies": {
+    "bootstrap-sass": "^3.4.1"
+  }
 }

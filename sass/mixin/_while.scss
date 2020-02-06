@@ -1,0 +1,22 @@
+// @while迴圈
+//方法一
+// $a : 12;
+// $b : 2;
+// @while $a > $b {
+//     .item-#{$a} {
+//        width: 1px * $a
+//     }
+//     $a : $a - 2;
+// }
+
+//方法二:打包進mixin裡
+@mixin items($a, $b) {
+    @while $a > $b {
+      .item-#{$a} {
+        width: 1px * $a;
+      }
+      $a: $a - 2;
+    }
+  }
+  
+  @include items(20, 2);
