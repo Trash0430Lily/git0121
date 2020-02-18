@@ -5,20 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- 在include裡面打包並加入變數 -->
-    @@include('./layout/head.html',{
-        "title": "產品頁面"
-      })
+    <!-- 加入變數，在product.html時打包並改變 -->
+<title>產品頁面</title>
+<link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
-    @@include('./layout/header.html')
+    <header>
+    <h1 class="logo">logo</h1>
+    <nav>
+        <ul>
+            <li>選單A</li>
+            <li>選單B</li>
+            <li>選單C</li>
+        </ul>
+    </nav>
+</header>
     <div class="wrapper_pro">
         <div class="primary_btn">主要按鈕</div>
         <div class="secondary_btn">按鈕</div>
         <div class="success_btn">按鈕</div>
         <div class="fail_btn">失敗按鈕</div>
     </div>
-    @@include('./layout/footer.html')
+    <footer>
+    <h2 class="logo">logo</h2>
+</footer>
 
 </body>
 

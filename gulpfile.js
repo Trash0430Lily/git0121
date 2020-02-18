@@ -5,10 +5,12 @@ var fileinclude = require('gulp-file-include');
 var browserSync = require('browser-sync').create();
 var reload = browserSync.reload;
 
+//所有的圖片檔案
 gulp.task('img' ,function () {
   gulp.src(['dev/img/*.*'  , 'dev/img/**/*.*']).pipe(gulp.dest('dest/img'));
 });
 
+//所有的js檔案
 gulp.task('concatjs', function(){
     gulp.src('./dev/js/*.js').pipe(gulp.dest('dest/js'));
 });
@@ -31,7 +33,7 @@ gulp.task('sass' , function() {
 //打包 ./gulp/index.html 裡的檔案加上include指令
 //傳出打包後的 html 到 ./dest
 gulp.task('fileinclude', function() {
-    gulp.src(['*.html'])
+    gulp.src(['dev/*.html'])
       .pipe(fileinclude({
         prefix: '@@', //深層include
         basepath: '@file' //層include
