@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 在include裡面打包並加入變數 -->
+    @@include('./layout/head.html',{
+        "title": "產品頁面"
+      })
+</head>
+
+<body>
+    @@include('./layout/header.html')
+    <div class="wrapper_pro">
+        <div class="primary_btn">按鈕</div>
+        <div class="secondary_btn">按鈕</div>
+        <div class="success_btn">按鈕</div>
+        <div class="fail_btn">失敗按鈕</div>
+    </div>
+    @@include('./layout/footer.html')
+
+</body>
+
+</html>
